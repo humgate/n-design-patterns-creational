@@ -1,5 +1,3 @@
-package builder;
-
 public class PersonBuilder {
 
     private String name = null;
@@ -12,7 +10,7 @@ public class PersonBuilder {
             this.name = name;
             return this;
         } else {
-            throw new IllegalArgumentException("Указано недопустимое значение имени: null для создания builder.Person");
+            throw new IllegalArgumentException("Указано недопустимое значение имени: null для создания Person");
         }
     }
 
@@ -21,20 +19,20 @@ public class PersonBuilder {
             this.surName = surname;
             return this;
         } else {
-            throw new IllegalArgumentException("Указано недопустимое значение фамилии: null для создания builder.Person");
+            throw new IllegalArgumentException("Указано недопустимое значение фамилии: null для создания Person");
         }
     }
 
     public PersonBuilder setAge(int age) throws IllegalArgumentException {
         /*
         * по условиям задания возраст может быть неизвестен, и для этого выбрано значение
-        * builder.Person.UNKNOWN_AGE, поэтому недопустимыми являются все значения кроме builder.Person.UNKNOWN_AGE и
+        * Person.UNKNOWN_AGE, поэтому недопустимыми являются все значения кроме Person.UNKNOWN_AGE и
         * положительных
         */
         if (age == Person.UNKNOWN_AGE || age > 0) {
             this.age = age;
         } else {
-            throw new IllegalArgumentException("Указано недопустимое значение возраста для создания builder.Person");
+            throw new IllegalArgumentException("Указано недопустимое значение возраста для создания Person");
         }
         return this;
     };
@@ -42,13 +40,13 @@ public class PersonBuilder {
     public PersonBuilder setAddress(String address) {
         /*
          * по условиям задания адрес может быть неизвестен, и для этого выбрано значение
-         * builder.Person.UNKNOWN_ADDRESS, поэтому null будем считать недопустимым значением. Так же будем
+         * Person.UNKNOWN_ADDRESS, поэтому null будем считать недопустимым значением. Так же будем
          * считать недопустимым значением пустую строку
          */
         if (address != null && !address.isEmpty()) {
             this.city = address;
         } else {
-            throw new IllegalArgumentException("Указано недопустимое значение адреса для создания builder.Person");
+            throw new IllegalArgumentException("Указано недопустимое значение адреса для создания Person");
         }
         return this;
     }
@@ -59,7 +57,7 @@ public class PersonBuilder {
             person.setAddress(city);
             return person;
         } else {
-            throw new IllegalStateException("Не указаны все необходимые параметры для создания builder.Person");
+            throw new IllegalStateException("Не указаны все необходимые параметры для создания Person");
         }
     }
 }

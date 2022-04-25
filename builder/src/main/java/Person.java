@@ -1,5 +1,3 @@
-package builder;
-
 import java.util.Objects;
 import java.util.OptionalInt;
 
@@ -31,7 +29,7 @@ public class Person {
             this.name = name;
             this.surName = surName;
             this.age = age;
-        } else throw new IllegalArgumentException("Недопустимые параметры создания builder.Person");
+        } else throw new IllegalArgumentException("Недопустимые параметры создания Person");
     }
 
     public PersonBuilder newChildBuilder() {
