@@ -11,6 +11,7 @@
     <modules>
         <module>builder</module>
         <module>factory-method</module>
+        <module>abstract-fabric</module>
     </modules>
 
     <properties>

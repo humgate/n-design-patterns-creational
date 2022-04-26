@@ -1,0 +1,3 @@
+interface HatchBack {
+    String getProperties();
+}
