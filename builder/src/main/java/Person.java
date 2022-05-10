@@ -17,10 +17,7 @@ public class Person {
     //city == UNKNOWN_ADDRESS будет означать что город неизвестен
     protected String city = UNKNOWN_ADDRESS;
 
-    /* Мне кажется логичным, чтобы за пределами пакета нельзя было вызвать этот конструктор
-    * А, внутри билдера мы сделаем так, чтобы конструктор вызывался с правильными аргументами,
-    * он на то и билдер чтобы этим заниматься
-    */
+    //protected - чтобы нельзя было вызвать этот конструктор за пределами пакета
     protected Person(String name, String surName, int age) throws IllegalArgumentException {
         if (name != null && !name.isEmpty() &&
                 surName != null && !surName.isEmpty() &&
